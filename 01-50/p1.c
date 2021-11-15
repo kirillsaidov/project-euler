@@ -4,18 +4,18 @@
 #define N 999
 
 // solutions
-int bruteforceSolution();
-int analyticalSolution();
+int bruteforceSolution(void);
+int analyticalSolution(void);
 
 // main
 int main(void) {
-	printf("Bruteforce solution: %d\n\n", bruteforceSolution()); // 233 168 
-	printf("Analytical solution: %d\n\n", analyticalSolution()); // 
+	printf("Bruteforce solution: %d\n", bruteforceSolution()); // 233 168 
+	printf("Analytical solution: %d\n", analyticalSolution()); // 
 	return 0;
 }
 
 // Calculates the sum of multiples of 3 and 5 below 1000 (slower)
-int bruteforceSolution() {
+int bruteforceSolution(void) {
 	int sum = 0;
 
 	for(int i = 0; i < N+1; i++) {
@@ -32,7 +32,7 @@ int analyticalSum(int n) {
 }
 
 // Calculates the sum of multiples of 3 and 5 below 1000 analytically (faster)
-int analyticalSolution() {
+int analyticalSolution(void) {
 	// multiples
 	int m3 = 3;
 	int m5 = 5;
