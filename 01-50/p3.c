@@ -18,7 +18,7 @@ int main(void) {
 
 	Thus, the last prime number returned is the solution.
 
-	Every number is can be represented as a product of primes:
+	Every number is represented as a product of primes:
 		num = П(p[i]) where p[i] doesn't have to be unique
 */
 long factorization(const long num) {
