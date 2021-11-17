@@ -4,17 +4,26 @@
 long largestPrime(long num);
 
 int main(void) {
-	long prime = 1;
-	long num = 13195;
+	long num = 600851475143;
 
-	printf("Largest prime of %ld: %ld\n", num, largestPrime(num));
+	printf("Largest prime of %ld is %ld\n", num, largestPrime(num));
 
 	return 0;
 }
 
-long numFactorization(const long num) {
-	if(num > 2) {
-		for(long i = (long)sqrt(num); i > 0; i--) {
+/* 
+	This function will always return prime numbers, because 
+	we start from 2 by returning smallest prime divisors of num
+	in largsetPrime function below. 
+
+	Thus, the last prime number returned is the solution.
+
+	Every number is can be represented as a product of primes:
+		num = П(p[i]) where p[i] doesn't have to be unique
+*/
+long factorization(const long num) {
+	if(num >= 2) {
+		for(long i = 2; i < sqrt(num); i++) {
 			if(num % i == 0) {
 				return i;
 			}
@@ -25,7 +34,13 @@ long numFactorization(const long num) {
 }
 
 long largestPrime(long num) {
-	return 0;
+	long prime = 1;
+
+	while((prime = factorization(num)) < num) {
+		num /= prime;
+	}
+
+	return prime;
 }
 
 
