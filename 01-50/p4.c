@@ -7,7 +7,6 @@ bool is_palindrome(const uint64_t num);
 void factorization(const long num);
 
 int main(void) {
-	// printf("%d\n", is_palindrome(121));
 	factorization(991199);
 
 	return 0;
